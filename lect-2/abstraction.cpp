@@ -1,6 +1,6 @@
 /*
 gpt link of questions from this topic as well as code 
-
+https://chatgpt.com/share/682b1de3-8650-800f-a479-95c74f5745b0
 */
 
 #include<iostream>
