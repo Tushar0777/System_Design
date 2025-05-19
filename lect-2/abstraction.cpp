@@ -1,7 +1,22 @@
+/*
+gpt link of questions from this topic as well as code 
+
+*/
+
 #include<iostream>
 #include<bits/stdc++.h>
 
 using namespace std;
+
+
+/*
+Abstract class --> Act as an interface for Outsiude world to operate the car. 
+This abstract class tells 'WHAT' all it can do rather then 'HOW' it does that.
+Since this is an abstract class we cannot directly create Objects of this class. We
+need to Inherit it first and then that child class will have the responsibility to 
+provide implementation details of all the abstract (virtual) methods in the class.
+
+*/
 
 class car{
 public:
@@ -12,6 +27,17 @@ virtual void brake()=0;
 virtual void stopEngine()=0;
 virtual ~car(){}
 };
+
+/*
+This is a Concrete class (A class that provide implementation details of an abstract class).
+Now anyone can make an Object of 'SportsCar' and can assign it to 'Car' (Parent class) pointer 
+(See main method for this)
+
+ to denote a real world car in programming we created 2 classes.
+One to deonte all the user-interface like pedals, buttons, stearing wheels etc ('Car' class).
+And another one to denote the actual car with all the implementations of these buttons (SportsCar' class).
+
+*/
 
 class sportscar:public car{
     public:
