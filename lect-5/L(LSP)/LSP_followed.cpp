@@ -1,3 +1,6 @@
+// https://chatgpt.com/share/6835928f-6478-800f-b959-3fad25897e8b
+// gpt link for quwstions and continue understanding 
+
 #include <iostream>
 #include <bits/stdc++.h>
 
