@@ -54,7 +54,7 @@ class burgerfactory{
 int main(){
 
     burgerfactory *factory=new burgerfactory();
-    burger * food=factory->create("simple");
+    burger * food=factory->create("premium");
     food->prepare();
     return 0;
 
