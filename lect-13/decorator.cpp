@@ -1,3 +1,5 @@
+//https://chatgpt.com/share/68409cd2-59a4-800f-8dde-a244777817dd
+
 #include <iostream>
 #include <string>
 
