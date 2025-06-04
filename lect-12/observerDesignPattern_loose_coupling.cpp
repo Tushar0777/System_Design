@@ -2,6 +2,27 @@
 #include<bits/stdc++.h>
 
 using namespace std;
+/*
+so what i did write here is now update method will have a param ch of type channel*
+to ab jo bhi channel hoga jo UPDATE ko call karega uski ka getvideo aur getname ayega 
+
+ab UPDATE ko NOTIFY call karega 
+
+void notify()override{
+    for(auto sub:subscribers){
+        // change here 
+        // now we are sending this refernce only 
+        sub->update(this);
+    }
+}
+
+since notify channel ka hi part hai to sirf this send krke hum ise send kr sakte hai 
+
+
+*/
+
+class channel; //(Forward declaration)
+// subscribers ko channel chaiye but vo humare me neeche bana hai to ye (Forward declaration) khete hai 
 
 class Isubscriber{
     public:
@@ -69,18 +90,16 @@ string getname(){
 class subscriber:public Isubscriber{
     private:
     string name;
-    channel *channels;
+   // channel *channels;
 
     public:
-    subscriber(string name,channel*channels){
+    subscriber(string name){
         this->name=name;
-        this->channels=channels;
+       // this->channels=channels;
     }
     void update(channel *ch)override{
         // ye jake observable ha jo class hai uska function call kr rahi hai 
         cout<<name<<" , "<<ch->getvideo()<<ch->getname()<<endl;
-
-
     }
 };
 
@@ -88,8 +107,13 @@ int main(){
 
     channel *first=new channel("my youtube channel ");
 
-    subscriber* phela=new subscriber("ram",first);
-    subscriber* dusra=new subscriber("sham",first);
+
+    // hum chaye to is first ko bhi hata sakte hai kyuki earlies code me channel ki zaruart thi ab nhi hai 
+    // subscriber* phela=new subscriber("ram",first);
+    // subscriber* dusra=new subscriber("sham",first);
+
+    subscriber *phela=new subscriber("ram");
+    subscriber *dusra=new subscriber("sham");
 
     channel *second=new channel("dsa ka channel");
 
