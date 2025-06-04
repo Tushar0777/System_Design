@@ -86,10 +86,16 @@ int main(){
     subscriber* phela=new subscriber("ram",first);
     subscriber* dusra=new subscriber("sham",first);
 
+    channel *second=new channel("dsa ka channel");
+
     first->subscribe(phela);
     first->subscribe(dusra);
+    second->subscribe(phela);
+
     
     first->uploadvideo("my first video");
+
+    second->uploadvideo("dsa tricks");
 
 
     first->unsubscribe(dusra);
