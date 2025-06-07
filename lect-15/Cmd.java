@@ -1,3 +1,6 @@
+//https://chatgpt.com/share/68449f8a-9330-800f-bf40-413ab5f37a1b
+// do check it out and iske 10 question zarur kario 
+
 import java.util.*;
 
 class airconditioner{
