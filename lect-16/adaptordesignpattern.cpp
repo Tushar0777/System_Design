@@ -1,4 +1,4 @@
-
+//https://chatgpt.com/share/6846eabc-329c-800f-a519-50a42db73ef9
 
 #include<iostream>
 #include<bits/stdc++.h>
