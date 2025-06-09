@@ -1,4 +1,5 @@
 //https://chatgpt.com/share/6846eabc-329c-800f-a519-50a42db73ef9
+//https://chat.deepseek.com/a/chat/s/b8687693-6142-4382-b274-480a22c9c505
 
 #include<iostream>
 #include<bits/stdc++.h>
