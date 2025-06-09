@@ -73,5 +73,7 @@ int main(){
    cout<<"---------------------------"<<endl;
   string data1= xmldata->getdata();
   cout<<data1<<endl;
+   delete processing;
+    delete xmldata;
     return 0;
 }
