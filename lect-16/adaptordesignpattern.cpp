@@ -70,5 +70,8 @@ int main(){
    analatics *processing=new adaptor(xmldata);
    client user;
    user.getans(processing);
+   cout<<"---------------------------"<<endl;
+  string data1= xmldata->getdata();
+  cout<<data1<<endl;
     return 0;
 }
