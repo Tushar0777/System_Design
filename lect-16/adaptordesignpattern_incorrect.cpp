@@ -1,4 +1,4 @@
-
+//https://chatgpt.com/share/6845e12e-77c4-800f-bd61-2883f2b9abe8
 
 #include<iostream>
 #include<bits/stdc++.h>
@@ -21,7 +21,7 @@ class Xmldata{
 class analatics{
     string json;
     public:
-   // analatics(){};
+    analatics(){};
     analatics(string pjson){
         json=pjson;
     }
@@ -33,19 +33,14 @@ class analatics{
 
 class adaptor:public analatics{
     // iska kam hai ki xml ko jason me krna 
-   // Xmldata *xmldata;
+    Xmldata *xmldata;
 
     public:
-    adaptor(Xmldata *pxmldata):analatics(converttojson(pxmldata->getdata())){};
-
-    string converttojson(string xml){
-        return  "{\"data\": \"" + xml + "\"}";
-
+    adaptor(Xmldata *pxmldata){
+        xmldata=pxmldata;
     }
     void analysis()override{
-        cout<<"converting xml data to json to json "<<endl;
-        analatics::analysis(); /// base class ka analysis call kara kyuki constructor se 
-        // vahi gya hai 
+        cout<<"converting xml data to json "<<xmldata->getdata()<<" to json "<<endl;
     }
 };
 
