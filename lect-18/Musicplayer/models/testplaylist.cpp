@@ -1,4 +1,4 @@
-#pragma once
+
 #include<iostream>
 #include<bits/stdc++.h>
 //#include "Songs.hpp"
@@ -28,7 +28,9 @@ int main(){
         cout<<it->getTitle()<<" "<<endl;
     }
 
-
+    delete rehja;
+    delete leja;
+    delete playlist;
 
     return 0;
 }

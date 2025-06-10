@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Songs.hpp"
 int main(){
     Songs *sg=new Songs("song1","artits1","/user/downloads");
