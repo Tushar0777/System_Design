@@ -9,7 +9,10 @@ public class DocumentFactory {
 
     public static RealDocument getDocument(String title,String author){
 
-       return cache.computeIfAbsent(author, key->new RealDocument(title, author));
+       return cache.computeIfAbsent(author, key->{
+       System.out.println("[FACTORY] Creating NEW RealDocument for: " + key);
+       return new RealDocument(title, author);
+    });
 
     }
 
