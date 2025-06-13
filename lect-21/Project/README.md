@@ -1,9 +1,75 @@
 # Proxy Design Pattern – Java Implementation
 
-This project demonstrates the Proxy Design Pattern in Java through a realistic document access scenario. The DocumentProxy class acts as a gatekeeper to the heavy RealDocument, implementing lazy loading, role-based access control, and logging.
+This project demonstrates the Proxy Design Pattern in Java with real-world features like:
 
-Only users with roles like admin or editor can access the full document or print it, while viewers can only access metadata, and guests are denied access. The proxy ensures that the real document is loaded only once (using thread-safe double-checked locking) and reused via a caching mechanism (DocumentFactory). RealDocument is designed to be immutable, making it safe for concurrent reads.
+- ✅ Lazy loading
+- ✅ Role-based access control (Protection Proxy)
+- ✅ Logging (Smart Proxy)
+- ✅ Thread-safe object creation
+- ✅ Caching (Flyweight style)
 
-This design showcases key proxy types: Virtual Proxy (lazy loading), Protection Proxy (access control), and Smart Proxy (logging). It also handles concurrency and object reuse efficiently.
+---
 
-To run the project, compile all Java files and execute Main.java to simulate access from different user roles.
+## 📦 Project Structure
+
+- `Document` – Interface
+- `RealDocument` – Heavy object (real subject)
+- `DocumentProxy` – Controls access to RealDocument
+- `DocumentFactory` – Manages caching
+- `Main` – Demo client
+
+---
+
+## ✅ Features
+
+| Feature            | Description                                                  |
+|--------------------|--------------------------------------------------------------|
+| Lazy Initialization | RealDocument is loaded only when needed                     |
+| Access Control      | Only certain roles can view/print documents                  |
+| Thread-Safe         | Uses `volatile` + `synchronized` for safe lazy init          |
+| Logging             | Tracks document access/denial                                |
+| Caching             | Shared instances for repeated document requests              |
+
+---
+
+## 🧠 Roles & Permissions
+
+| Role     | View Content | Print | View Metadata |
+|----------|--------------|-------|----------------|
+| admin    | ✅           | ✅    | ✅             |
+| editor   | ✅           | ✅    | ✅             |
+| viewer   | ❌           | ❌    | ✅             |
+| guest    | ❌           | ❌    | ❌             |
+
+---
+
+## 🧪 Sample Usage
+
+```java
+Document doc1 = new DocumentProxy("Secrets.pdf", "Alice", "viewer");
+Document doc2 = new DocumentProxy("Secrets.pdf", "Alice", "admin");
+
+System.out.println(doc1.getMetadata());
+doc1.displayContent(); // Access Denied
+
+System.out.println(doc2.getMetadata());
+doc2.displayContent(); // Loads and displays content
+doc2.print();           // Prints document
+```
+
+---
+
+## 🚀 How to Run
+
+1. Compile:
+   ```bash
+   javac *.java
+   ```
+2. Run:
+   ```bash
+   java Main
+   ```
+
+---
+
+
