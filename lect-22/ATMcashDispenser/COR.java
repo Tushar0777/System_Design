@@ -68,10 +68,11 @@ class FiveHundredHandler extends MoneyHandler{
 
         if(remnotes>0){
             if(nexthandler!=null) nexthandler.dispense(remnotes);
-        }
+        
         else{
             System.out.println("remaining amount of "+remnotes+" cannot be fullfilled ");
         }
+    }
     }
 }
 
@@ -101,10 +102,11 @@ class TwoHundredHandler extends MoneyHandler{
 
         if(remnotes>0){
             if(nexthandler!=null) nexthandler.dispense(remnotes);
-        }
+        
         else{
             System.out.println("remaining amount of "+remnotes+" cannot be fullfilled ");
         }
+    }
     }
 }
 
@@ -133,10 +135,11 @@ class HundredHandler extends MoneyHandler{
 
         if(remnotes>0){
             if(nexthandler!=null) nexthandler.dispense(remnotes);
-        }
+        
         else{
             System.out.println("remaining amount of "+remnotes+" cannot be fullfilled ");
         }
+    }
     }
 }
 
