@@ -1,0 +1,41 @@
+🔍 Interview Question: Chain of Responsibility in HTTP Request Processing
+🧾 Question Statement:
+You're designing the backend request processing pipeline of a custom HTTP server or API Gateway. When a request comes in, it must go through multiple processing steps in a chain-like fashion, where each component has the option to:
+
+Handle, modify, or reject the request,
+
+Or pass it to the next handler in the chain.
+
+Implement this using the Chain of Responsibility pattern. The chain must include the following responsibilities in order:
+
+AuthMiddleware: Verify the user's authentication token.
+
+RateLimiter: Check if the user has exceeded request limits.
+
+LoggerMiddleware: Log request metadata (method, path, user).
+
+ControllerHandler: Handle the actual business logic for the endpoint.
+
+✅ Functional Requirements:
+Each handler must decide whether to handle or forward the request.
+
+If Auth fails, the request should stop and return "401 Unauthorized".
+
+If Rate limit exceeded, the request should stop and return "429 Too Many Requests".
+
+If all checks pass, the controller should process and return a response.
+
+Logging should happen for all requests, even if they're rejected later.
+
+Each middleware should be easily replaceable or extendable.
+
+🚫 Non-Functional Requirements:
+System should be extensible: you should be able to add or remove handlers easily.
+
+Should follow Single Responsibility Principle — each handler should do just one job.
+
+Should ensure low coupling between handlers.
+
+System should be testable — each handler should be unit testable independently.
+
+Should be memory efficient, avoiding unnecessary object creation.
