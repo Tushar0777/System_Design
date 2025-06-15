@@ -1,8 +1,8 @@
 package Project;
 
 public class Response {
-    int statuscode;
-    String message;
+    public int statuscode;
+    public String message;
 
     public Response(int statuscode,String message){
         this.statuscode=statuscode;

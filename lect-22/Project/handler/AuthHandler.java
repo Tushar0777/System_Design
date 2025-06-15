@@ -32,7 +32,7 @@ public class AuthHandler extends Handler {
         request.userId=getUserId(request.authtoken);
         System.out.println("AuthHandler: Authenticated user "+request.userId);
 
-        if(nextHandler!=null) nextHandler.handler(request);
+        if(nextHandler!=null) return nextHandler.handler(request);
         
         return new Response(200, "OK");
 

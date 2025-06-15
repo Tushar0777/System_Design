@@ -18,7 +18,7 @@ public class RateLimiterHandler extends Handler {
         }
         int count =requestCount.getOrDefault(request.userId, 0);
 
-        if(count>limit){
+        if(count>=limit){
             //System.out.println();
             System.out.println("RateLimiterHandler: User " + request.userId + " exceeded limit!");
             return new Response(429, "Too Many Requests");
@@ -26,7 +26,9 @@ public class RateLimiterHandler extends Handler {
         requestCount.put(request.userId,count+1);
         System.out.println("RateLimiterHandler: User " + request.userId + " request #" + (count + 1));
 
-        if(nextHandler!=null) nextHandler.handler(request);
+        if(nextHandler!=null){
+            return nextHandler.handler(request);
+        } 
 
         return new Response(200, "OK");
 
