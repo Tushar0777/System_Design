@@ -3,7 +3,7 @@ package PaymentGateway;
 import PaymentGateway.BankingSystem.Bankingsystem;
 
 public abstract class PaymentGateway {
-    private Bankingsystem bankingsystem;
+    protected Bankingsystem bankingsystem;
 
     public PaymentGateway(){
         this.bankingsystem=null;
