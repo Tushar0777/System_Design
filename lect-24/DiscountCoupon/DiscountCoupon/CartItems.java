@@ -11,8 +11,8 @@ public class CartItems {
     public int ItemTotal(){
         return product.getprize();
     }
-    public int getquantity(){
-        return quantity;
+    public Product getProduct(){
+        return product;
     }
     
 }
